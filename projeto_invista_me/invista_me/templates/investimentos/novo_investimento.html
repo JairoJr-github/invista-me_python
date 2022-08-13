@@ -1,0 +1,26 @@
+{% extends 'investimentos/base.html' %} {% block conteudo %}
+<p></p>
+{% load widget_tweaks %}
+<div class="container">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <h1>Formulario Novo Investimento</h1>
+    <div class="form-row align-items-center">
+      <label>Investimento</label>
+      {% render_field formulario.investimento class='form-control' %}
+      <label>Valor total</label>
+      {% render_field formulario.valor class='form-control pull-left' %}
+      <label>Pago</label>
+      {% render_field formulario.pago class='form-control' %}
+      <label>Data</label>
+      {% render_field formulario.data class='form-control' %}
+    </div>
+    <p></p>
+    <button class="btn btn-success" style="margin-bottom: 10px" type="submit">
+      Salvar
+    </button>
+  </form>
+</div>
+{% endblock %}
+<!--<label for=""> Tipo de Investimento </label>
+  <input type="text" name="TipoInvestimento" /> -->
